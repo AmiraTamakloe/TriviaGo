@@ -1,4 +1,4 @@
-# LOG2990 - Code de base
+# Trivia GO - Code de base
 
 Code de base à utiliser pour démarrer le développement de votre projet.
 Le code contient 2 projets séparés :
@@ -211,4 +211,3 @@ Si vous n'êtes pas familiers avec Git et le fonctionnement des branches, nous v
 [AntiPatterns](https://sourcemaking.com/antipatterns) (plus spécifiquement [Software Development AntiPatterns](https://sourcemaking.com/antipatterns/software-development-antipatterns))
 
 [Building your first Angular App](https://scrimba.com/g/gyourfirstangularapp)
-# TriviaGo
