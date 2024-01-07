@@ -1,0 +1,12 @@
+<div class="page">
+    <div class="container" *ngFor="let game of gamesOnPage; let i = index">
+        <app-game-details
+            [isAdmin]="isAdmin ? true : false"
+            [game]="game"
+            [index]="i"
+            (updateView)="handleViewUpdate()"
+            (updateGameList)="handleDelete($event)"
+        ></app-game-details>
+    </div>
+    <mat-paginator class="paginator" [pageSize]="numGamesOnPage" [length]="totalVisibleGames" (page)="handlePageChange($event)"> </mat-paginator>
+</div>

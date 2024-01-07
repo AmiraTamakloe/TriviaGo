@@ -1,0 +1,47 @@
+.page {
+    background-color: #d9e5d6;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 20% 10% 5% 65%;
+    background-color: #d9e5d6;
+}
+.list {
+    text-align: center;
+    font-size: 250%;
+    background-color: #d9e5d6;
+}
+.games {
+    width: 80%;
+    height: 50%;
+    background-color: #d9e5d6;
+    justify-self: center;
+}
+
+.title {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 28% 13% 20% 20%;
+    grid-template-areas: 'Name Date Player Score';
+    font-size: 150%;
+    background-color: #d9e5d6;
+}
+
+.name {
+    grid-area: Name;
+    background-color: #d9e5d6;
+}
+.date {
+    grid-area: Date;
+    background-color: #d9e5d6;
+}
+.player {
+    grid-area: Player;
+    background-color: #d9e5d6;
+}
+
+.score {
+    grid-area: Score;
+    background-color: #d9e5d6;
+}

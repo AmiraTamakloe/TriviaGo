@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngIf="this.qrlHost.evalIndex < this.qrlHost.answers.length">
+        <p>Joueur : {{ this.qrlHost.answers[qrlHost.evalIndex].player }}</p>
+        <p>Réponse : {{ this.qrlHost.answers[qrlHost.evalIndex].answer }}</p>
+        <p>Veuillez noter la réponse ci-dessus :</p>
+        <div class="buttons">
+            <div class="button" *ngFor="let item of [0, 0.5, 1]">
+                <button class="default-button" (click)="submitEval(item)">{{ item * 100 }}%</button>
+            </div>
+        </div>
+    </div>
+</div>

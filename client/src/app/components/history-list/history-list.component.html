@@ -1,0 +1,28 @@
+<div class="button-container">
+    <div>
+        <button (click)="gameHistoryOrder('gameName')">
+            <span *ngIf="isAscending['gameName']" class="arrow-up">↑</span>
+            <span *ngIf="!isAscending['gameName']" class="arrow-down">↓</span>
+            Name
+            <span *ngIf="isAscending['gameName']" class="arrow-up">↑</span>
+            <span *ngIf="!isAscending['gameName']" class="arrow-down">↓</span>
+        </button>
+        <button (click)="gameHistoryOrder('date')">
+            <span *ngIf="isAscending['date']" class="arrow-up">↑</span>
+            <span *ngIf="!isAscending['date']" class="arrow-down">↓</span>
+            Date
+            <span *ngIf="isAscending['date']" class="arrow-up">↑</span>
+            <span *ngIf="!isAscending['date']" class="arrow-down">↓</span>
+        </button>
+    </div>
+    <button (click)="deleteHistory()">Vider l'historique</button>
+</div>
+<div class="game-list-container" *ngFor="let history of gamesHistoryOnPage; let i = index">
+    <div class="title">
+        <h3 class="history-name">{{ history.gameName }}</h3>
+        <h3 class="history-date">{{ history.date }}</h3>
+        <h3 class="history-player">{{ history.playersNumber }}</h3>
+        <h3 class="history-score">{{ history.bestScore }}</h3>
+    </div>
+</div>
+<mat-paginator class="paginator" [pageSize]="numGamesHistoryOnPage" [length]="historyLength" (page)="handlePageChange($event)"> </mat-paginator>

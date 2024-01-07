@@ -1,0 +1,21 @@
+#ignoring .vscode folder but we keep some files for debuging
+/.vscode/chrome
+/.vs/
+
+package-lock.json
+.DS_Store
+
+# Code Coverage Folder
+coverage/
+
+#Node Modules
+/node_modules
+
+# Folder for note taking, etc
+scratch/
+
+# File for vscode workspace
+workspace.code-workspace
+
+# .env  indépendant pour chaque membre de l'équipe
+*.env

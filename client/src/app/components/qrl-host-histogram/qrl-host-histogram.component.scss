@@ -1,0 +1,56 @@
+$Largura-Barra: 40px;
+$MaxHeight: 100px;
+
+.histogram .content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: $MaxHeight;
+    margin-top: 50%;
+}
+
+.histogram .content span {
+    font-family: 'Roboto';
+    font-size: 13px;
+    color: #707070;
+}
+
+.histogram .line {
+    background-color: #cccccc;
+    width: 100%;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.histogram .legends {
+    display: flex;
+    flex-direction: row;
+    color: #707070;
+    font-family: 'Roboto';
+    font-size: 12px;
+    text-align: center;
+}
+
+.histogram .legends span {
+    width: $Largura-Barra;
+    margin: 0 25px;
+}
+
+.histogram .bars {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.histogram .bar {
+    width: $Largura-Barra;
+    box-sizing: border-box;
+    min-height: 2px;
+    margin: 0 25px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}

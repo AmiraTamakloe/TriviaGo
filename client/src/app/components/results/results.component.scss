@@ -1,0 +1,39 @@
+.container {
+    width: 800px;
+    max-height: 600px;
+    min-height: 400px;
+    font-size: large;
+}
+
+.header {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 300%;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+.slider-container {
+    text-align: center;
+}
+
+.info {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.button {
+    text-align: center;
+    font-size: 200%;
+    margin-top: 5%;
+    margin-left: 50%;
+    border-color: rgb(172, 161, 119);
+    background-color: rgb(237, 222, 164);
+    border-radius: 20px;
+    border: solid 2px #0e0e0e;
+}

@@ -1,0 +1,16 @@
+div {
+    width: 800px;
+    max-height: 600px;
+    min-height: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div p {
+    word-break: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 20px;
+}

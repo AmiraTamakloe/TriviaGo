@@ -1,0 +1,15 @@
+<div class="page">
+    <app-header [isAdmin]="true"></app-header>
+    <div class="container">
+        <div class="list">Historique de jeu</div>
+        <div class="title">
+            <div class="name">Nom du jeu</div>
+            <div class="date">Début de la partie</div>
+            <div class="player">Nombre de joueur</div>
+            <div class="score">Meilleur score</div>
+        </div>
+        <div class="games">
+            <app-history-list [isAdmin]="true"></app-history-list>
+        </div>
+    </div>
+</div>

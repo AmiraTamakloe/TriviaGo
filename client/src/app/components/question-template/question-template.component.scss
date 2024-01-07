@@ -1,0 +1,82 @@
+/* Styles for the form */
+form {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #d9e5d6;
+}
+
+.page {
+    background-color: #d9e5d6;
+}
+.btn {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.underline {
+    text-decoration: underline;
+}
+.answers {
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+label {
+    font-weight: bold;
+}
+
+input[type='text'],
+input[type='number'],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #0fa3b1;
+    color: #fff;
+    border: solid 1px #067b86;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#box {
+    border-radius: 5px;
+    padding: 10px;
+    border: solid 1px #88a180;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 2%;
+}
+
+#bullet {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #ccddc7;
+    border: solid 1px #88a180;
+    border-radius: 20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+img {
+    width: 2%;
+    height: 3%;
+    margin-right: 1%;
+}
+
+.drag-handle {
+    cursor: grab; /* Use the grab cursor style */
+    border-radius: 5px; /* Add some border-radius for rounded corners */
+    padding: 5px; /* Add padding to make it visually clickable */
+    transition: background-color 0.2s; /* Add a smooth color transition effect */
+}
+
+.drag-handle:hover {
+    background-color: #c0c0c0; /* Change the background color on hover */
+}

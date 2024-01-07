@@ -1,0 +1,21 @@
+<div class="histogram">
+    <div class="content">
+        <div class="bars">
+            <div
+                class="bar"
+                [style.background-color]="colorsArray[1]"
+                [style.height]="setSize(qrlHostService.nRecentChanges, qrlHostService.nPlayers)"
+            ></div>
+            <div
+                class="bar"
+                [style.background-color]="colorsArray[0]"
+                [style.height]="setSize(this.qrlHostService.nPlayers - this.qrlHostService.nRecentChanges, qrlHostService.nPlayers)"
+            ></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="legends">
+        <span> {{ this.qrlHostService.nRecentChanges }} réponses changées </span>
+        <span>{{ this.qrlHostService.nPlayers - this.qrlHostService.nRecentChanges }} réponses inchangées</span>
+    </div>
+</div>

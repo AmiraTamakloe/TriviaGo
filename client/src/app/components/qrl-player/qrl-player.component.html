@@ -1,0 +1,9 @@
+<div *ngIf="this.qrlCommonService.state === qrlState.Play">
+    <app-qrl-text-box #qrlTextBox></app-qrl-text-box>
+</div>
+<div *ngIf="this.qrlCommonService.state === qrlState.Validate">
+    <p>Veuillez patienter en attendant l'évaluations des réponses</p>
+</div>
+<div *ngIf="this.qrlCommonService.state === qrlState.ViewResults">
+    <app-qrl-results></app-qrl-results>
+</div>

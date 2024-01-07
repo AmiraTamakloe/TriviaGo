@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="header">Résultats</div>
+    <div class="data">
+        <div>
+            <p>Scores</p>
+            <div class="info" *ngFor="let res of sortedResults; let i = index">
+                {{ res.name }}: {{ res.points }} points, {{ res.bonus }} bonus obtenus.
+            </div>
+        </div>
+        <div>
+            <p>Statistiques</p>
+            <div class="slider-container">
+                <app-histogram-slider></app-histogram-slider>
+            </div>
+        </div>
+    </div>
+    <button class="button" (click)="quitMatch()">Accueil</button>
+</div>

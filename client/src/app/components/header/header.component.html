@@ -1,0 +1,10 @@
+<div class="header">
+    <a id="Link" routerLink="/home">
+        <img class="logo" src="./assets/logo.png" alt="Logo Projet" />
+    </a>
+    <div class="buttons" *ngIf="isAdmin">
+        <button class="button" (click)="displayImport()">Importer</button>
+        <button class="button" routerLink="/modification">Créer Un Jeu</button>
+        <button class="button" routerLink="/history">Historique</button>
+    </div>
+</div>

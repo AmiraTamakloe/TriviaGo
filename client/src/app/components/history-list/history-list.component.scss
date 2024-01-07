@@ -1,0 +1,56 @@
+h2 {
+    text-align: center;
+}
+
+.page {
+    background-color: #d9e5d6;
+}
+
+.paginator {
+    background-color: #d9e5d6;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background-color: rgb(182, 235, 237);
+}
+
+.game-list-container {
+    border: solid rgb(32, 211, 218) 2px;
+    margin-bottom: 5px;
+}
+
+.history-name {
+    margin-left: 5px;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.history-date {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.history-player {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.history-score {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.arrow-up {
+    display: inline-block;
+    margin-left: 5px;
+    color: green;
+}
+
+.arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    color: red;
+}

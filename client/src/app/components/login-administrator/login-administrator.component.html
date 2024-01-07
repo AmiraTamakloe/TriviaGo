@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+    <p>Veuillez insérer votre nom</p>
+    <mat-form-field>
+        <mat-label>Code de jeu</mat-label>
+        <input matInput [(ngModel)]="data.code" type="text" (keydown.enter)="onEnter()" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="data.name" type="text" (keydown.enter)="onEnter()" />
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button id="okButton" mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

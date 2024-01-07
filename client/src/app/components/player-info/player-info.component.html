@@ -1,0 +1,17 @@
+<div class="multi" *ngIf="selectedGameMode === 'multi'">
+    <div>
+        <h2 class="info" *ngFor="let name of playersNameList; let i = index">{{ name }} : {{ playersPoints[i] }} points</h2>
+    </div>
+    <div *ngIf="playersOutNameList.length !== 0">
+        <h1 class="info">Joueurs ayant quitté :</h1>
+        <h2 class="info" *ngFor="let playerName of playersOutNameList; let i = index">
+            <s>{{ playerName }}</s> : {{ playersOutPoints[i] }} points
+        </h2>
+    </div>
+    <div class="players" *ngIf="organizer">
+        <app-player-list-table></app-player-list-table>
+    </div>
+</div>
+<div class="solo" *ngIf="selectedGameMode === 'solo'">
+    <h2 class="info">{{ playerName }} : {{ playerPoint }} points</h2>
+</div>

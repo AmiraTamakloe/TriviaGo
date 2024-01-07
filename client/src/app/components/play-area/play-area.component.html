@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="player">
+        <app-player-info [playerPoints]="playerPoints"></app-player-info>
+        <button class="button" (click)="endingQuiz()" routerLink="/games">Abandon</button>
+    </div>
+
+    <div class="question">
+        <app-question-description [questionNumber]="questionNumber" (point)="questionPoints($event)"></app-question-description>
+    </div>
+    <div class="btn">
+        <app-button
+            [time]="time"
+            [questionNumber]="questionNumber"
+            [isQuestionAnswered]="isQuestionAnswered"
+            [isEndButtonClicked]="isEndButtonClicked"
+            (nextQuestionEvent)="nextQuestion()"
+            (checkbox)="checkBoxValidation($event)"
+            (checkboxInfo)="checkBoxInformation($event)"
+            (bdInfo)="dataBaseInfo($event)"
+            (qrlAnswered)="qrlAnswered()"
+        ></app-button>
+    </div>
+</div>

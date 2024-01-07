@@ -1,0 +1,26 @@
+.header {
+    background: #0fa3b1;
+    width: 100%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+img {
+    width: 40%;
+    height: 100%;
+    margin-top: -3%;
+    margin-left: 2%;
+}
+
+.button {
+    justify-self: center;
+    margin-left: 5%;
+    border-radius: 20px;
+    font-size: large;
+    padding: 2%;
+}
+
+.buttons {
+    margin-top: 5%;
+}

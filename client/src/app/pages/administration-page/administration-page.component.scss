@@ -1,0 +1,43 @@
+.page {
+    background-color: #d9e5d6;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 20% 10% 5% 65%;
+    background-color: #d9e5d6;
+    overflow: auto;
+}
+.list {
+    text-align: center;
+    font-size: 250%;
+    background-color: #d9e5d6;
+}
+.title {
+    display: grid;
+    text-align: center;
+    margin-top: -2%;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-areas: 'Name Date Visibility';
+    font-size: 150%;
+    background-color: #d9e5d6;
+}
+
+.games {
+    width: 80%;
+    height: 50%;
+    background-color: #d9e5d6;
+    justify-self: center;
+}
+.name {
+    grid-area: Name;
+    background-color: #d9e5d6;
+}
+.date {
+    grid-area: Date;
+    background-color: #d9e5d6;
+}
+.visibility {
+    grid-area: Visibility;
+    background-color: #d9e5d6;
+}

@@ -1,0 +1,78 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    min-height: 100%;
+    height: auto;
+    background-color: #d9e5d6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+button {
+    text-align: center;
+    border-radius: 20px;
+    margin-right: 15px;
+    padding: 15px 15px 15px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e1e1e;
+    border: solid 4px;
+    cursor: pointer;
+}
+
+.create-button {
+    background-color: #eddea4;
+    border-color: #aca177;
+}
+
+.join-button {
+    background-color: #f7a072;
+    border-color: #8e6847;
+}
+
+.param-button {
+    background-color: #ff9b42;
+    border-color: #926f5d;
+}
+
+.team-name {
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    color: white;
+}
+.logo {
+    height: 40%;
+    width: 40%;
+}
+
+.poly {
+    margin-top: -10%;
+}
+.footer-item {
+    text-align: center;
+    background-color: rgb(15, 163, 177);
+    width: 100%;
+    height: 110px;
+}
+
+.team-list {
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.server-message {
+    justify-content: center;
+    width: 20%;
+    min-width: min-content;
+}

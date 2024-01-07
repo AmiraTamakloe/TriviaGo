@@ -1,0 +1,3 @@
+<label for="textInput">Votre réponse : </label>
+<input id="textInput" [disabled]="textBoxDisabled" (input)="countCharacters($event)" [(ngModel)]="textInputValue" />
+<p [style.color]="charCountColor">{{ characterCount }}/200 caractères</p>

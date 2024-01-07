@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="container">
+    <div *ngIf="!isOrganizer" class="title">En attente du commencement de la partie</div>
+    <div *ngIf="isOrganizer" class="title">En attente de joueurs</div>
+    <div class="animated-text">{{ animatedText }}</div>
+    <div class="code-area">Code : {{ matchId }}</div>
+    <div *ngIf="isOrganizer" class="centered">
+        <button class="default-button" *ngIf="isOrganizer" (click)="handleLockMatch()">{{ lockMatchText }}</button>
+        <button *ngIf="isOrganizer" class="default-button" (click)="startMultiplayerGame()">Commencer la partie</button>
+    </div>
+    <div class="right">
+        <button class="default-button" (click)="exitWaitRoom()">Quitter la partie</button>
+    </div>
+    <div class="player-list" *ngFor="let player of players; index as i">
+        <div class="count">
+            <p>{{ i + 1 }}</p>
+        </div>
+        <div class="player">
+            <p>{{ player }}</p>
+        </div>
+        <button *ngIf="isOrganizer" title="Exclure ce joueur" (click)="banPlayer(i)"><i class="fa fa-close"></i></button>
+    </div>
+</div>

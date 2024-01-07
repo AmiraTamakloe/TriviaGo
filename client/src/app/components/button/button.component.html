@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="answer" *ngIf="this.matchQuestionManagementService.questionType === 'QCM'">
+        <div *ngFor="let item of items; let i = index">
+            <div *ngIf="!organizer">
+                <button
+                    [style.background-color]="item.buttonColor"
+                    class="checkbox"
+                    (click)="buttonClicked(i)"
+                    (keydown.enter)="$event.preventDefault()"
+                    [disabled]="validateDisabled"
+                >
+                    {{ item.choices }}
+                </button>
+            </div>
+            <div *ngIf="organizer">
+                <button
+                    class="checkbox"
+                    [ngStyle]="{ 'background-color': this.game.questions[this.questionNumber].choices[i].isCorrect ? greenColor : redColor }"
+                    [ngClass]="{ 'disable-button-text': true }"
+                >
+                    {{ item.choices }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="answer" *ngIf="this.matchQuestionManagementService.questionType === 'QRL'">
+        <app-qrl-text-box *ngIf="!this.gameMode.isMultiplayer"></app-qrl-text-box>
+        <app-qrl-multiplayer *ngIf="this.gameMode.isMultiplayer"></app-qrl-multiplayer>
+    </div>
+    <div class="control">
+        <app-timer-control *ngIf="organizer"></app-timer-control>
+        <button [disabled]="validateDisabled" [hidden]="organizer" (click)="endingButton($event)" class="enter">Entrer</button>
+        <button [hidden]="!this.matchQuestionManagementService.nextButtonVisible || !organizer" (click)="nextQuestion()" class="button">
+            {{ isResults ? 'Résultats' : 'Suivant' }}
+        </button>
+    </div>
+</div>

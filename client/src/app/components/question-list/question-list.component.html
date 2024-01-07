@@ -1,0 +1,5 @@
+<div class="container" *ngIf="data.questions">
+    <h2>Liste des questions</h2>
+    <p class="question" *ngFor="let question of questionsOnPage">{{ question.text }}</p>
+    <mat-paginator [pageSize]="numQuestionsOnPage" [length]="numQuestions" (page)="handlePageChange($event)"> </mat-paginator>
+</div>

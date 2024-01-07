@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="sortedData" matSort (matSortChange)="sortData($event)">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+        <td mat-cell *matCellDef="let player" [style.color]="player.state" [style.textDecoration]="player.state === black ? 'line-through' : 'none'">
+            {{ player.name }}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Points</th>
+        <td mat-cell *matCellDef="let player" [style.color]="player.state">{{ player.points }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>État</th>
+        <td mat-cell *matCellDef="let player" [style.color]="player.state">
+            {{
+                player.state === '#ff0000' ? 'inactif' : player.state === '#00ff00' ? 'répondu' : player.state === '#ffff00' ? 'en cours' : 'abandon'
+            }}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="chat">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Muet</th>
+        <td mat-cell *matCellDef="let player" [style.color]="player.state">
+            <input type="checkbox" value="player.name" (change)="onCheckboxChange($event, player.name)" />
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

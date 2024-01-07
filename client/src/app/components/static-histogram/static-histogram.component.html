@@ -1,0 +1,13 @@
+<div class="histogram">
+    <div class="content">
+        <div class="bars" *ngFor="let item of list">
+            <span>{{ item.value }}</span>
+            <span>{{ item.size }}</span>
+            <div class="bar" [style.background-color]="item.color" [style.height]="item.size"></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="legends">
+        <span *ngFor="let item of list">{{ item.legend }}</span>
+    </div>
+</div>

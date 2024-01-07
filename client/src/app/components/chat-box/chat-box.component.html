@@ -1,0 +1,23 @@
+<div class="chat-box">
+    <div class="message-container">
+        <div class="message-bubble">
+            <div *ngFor="let message of messageTexts">
+                <div class="message">
+                    <p [style.color]="message.color">{{ message.text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input-container">
+        <input
+            class="chat-input"
+            [(ngModel)]="messageText"
+            (keydown.enter)="addMessage()"
+            (keydown)="onChatBoxKeyDown($event)"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            type="text"
+        />
+        <button id="button-send" (click)="addMessage()">Envoyer</button>
+    </div>
+</div>

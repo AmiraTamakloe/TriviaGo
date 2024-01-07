@@ -1,0 +1,24 @@
+<div class="container" *ngIf="!isGameOver">
+    <div class="player">
+        <app-player-info [organizer]="organizer"></app-player-info>
+        <div *ngIf="organizer">
+            <app-histogram [questionNumber]="questionNumber" [list]="[]"></app-histogram>
+        </div>
+        <button class="button" (click)="endingQuiz()" routerLink="/games">Abandon</button>
+    </div>
+    <div class="question">
+        <app-question-description [questionNumber]="questionNumber"></app-question-description>
+    </div>
+    <div class="btn">
+        <app-button
+            [isResults]="this.matchQuestionManagementService.isResults"
+            [questionNumber]="questionNumber"
+            [isEndButtonClicked]="isEndButtonClicked"
+            (displayResults)="displayResults()"
+            (checkbox)="checkBoxValidation($event)"
+            (checkboxInfo)="checkBoxInformation($event)"
+            (bdInfo)="dataBaseInfo($event)"
+        ></app-button>
+    </div>
+</div>
+<app-results *ngIf="isGameOver"></app-results>

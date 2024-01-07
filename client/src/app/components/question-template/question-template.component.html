@@ -1,0 +1,94 @@
+<div class="page">
+    <app-header></app-header>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <label for="title">Titre: </label>
+        <input id="title" type="text" formControlName="title" required />
+
+        <label for="description"> Description : </label>
+        <input type="text" name="description" id="description" formControlName="description" />
+
+        <label for="duration">Durée :</label>
+        <select id="duration" name="duration" formControlName="duration">
+            <option *ngFor="let value of durationArray" [value]="value">{{ value }}</option>
+        </select>
+
+        <div formArrayName="questions" cdkDropList (cdkDropListDropped)="dropQuestion($event)">
+            <h2 class="underline">Questions</h2>
+            <h3>
+                Tu peux cliquer et faire glisser les questions ainsi que leurs réponses pour les réorganiser ! (astuce : clique sur le numéro de la
+                question ou de la réponse et déplace le)
+            </h3>
+            <button type="button" (click)="addQuestion(true)">+ Ajoutez une question</button>
+            <div
+                *ngFor="let questionGroup of questions.controls; let i = index"
+                id="box"
+                (mouseenter)="enterQuestion(i)"
+                [style.backgroundColor]="questionGroup.get('type')?.value === 'QCM' ? 'lightblue' : '#F2C493'"
+            >
+                <div [formGroupName]="i">
+                    <h3 cdkDrag #elem="cdkDrag" cdkDragHandle class="drag-handle">
+                        <img class="logo" src="./assets/drag_handle.png" alt="Logo Projet" />Question {{ i + 1 }}
+                    </h3>
+                    <label for="type">Type de question :</label>
+                    <select id="type" formControlName="type">
+                        <option value="QCM">QCM</option>
+                        <option value="QRL">QRL</option>
+                    </select>
+
+                    <label for="text">Question :</label>
+                    <input type="text" id="text" formControlName="text" />
+
+                    <label for="score">Pointage :</label>
+                    <select type="number" id="score" formControlName="points">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>
+                        <option value="80">80</option>
+                        <option value="90">90</option>
+                        <option value="100">100</option>
+                    </select>
+
+                    <div *ngIf="questionGroup.get('type')?.value === 'QCM'">
+                        <div formArrayName="choices" cdkDropList (cdkDropListDropped)="dropChoice($event, questionGroup)">
+                            <h2 class="underline">Réponses</h2>
+                            <button type="button" *ngIf="getChoices(questionGroup).length < 4" (click)="addChoice(questionGroup)">
+                                + Ajoute un choix
+                            </button>
+                            <div
+                                *ngFor="let choiceGroup of getChoices(questionGroup).controls; let i = index"
+                                id="bullet"
+                                cdkDrag
+                                #elem="cdkDrag"
+                                (mouseenter)="enterChoice(i, questionGroup)"
+                            >
+                                <div [formGroupName]="i">
+                                    <label class="answers">Réponse {{ i + 1 }} :</label>
+                                    <input class="answers" type="input" formControlName="text" placeholder="Réponse 1" />
+                                    <label class="answers">Est-ce une réponse valide ?</label>
+                                    <select formControlName="isCorrect">
+                                        <option value="true">Vrai</option>
+                                        <option value="false">Faux</option>
+                                    </select>
+                                    <button type="button" *ngIf="getChoices(questionGroup).length > 2" (click)="deleteChoice(questionGroup, i)">
+                                        Supprimer cette réponse
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn" type="button" (click)="deleteQuestion(i)">Supprimer la question</button>
+                </div>
+            </div>
+            <button type="button" (click)="addQuestion(true)" *ngIf="questions.length > 0">+ Ajoutez une question</button>
+        </div>
+
+        <p>Veuillez compléter le formulaire pour activer ce bouton.</p>
+        <button type="submit" [disabled]="!profileForm.valid">Enregistrer le Jeu</button>
+    </form>
+    <p class="hidden">Form Value: {{ profileForm.value | json }}</p>
+    <p class="hidden">Form Status: {{ profileForm.status }}</p>
+</div>

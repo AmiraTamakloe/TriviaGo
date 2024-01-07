@@ -1,0 +1,13 @@
+.container {
+    width: 800px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question {
+    font-size: 20px;
+    word-break: break-word;
+}

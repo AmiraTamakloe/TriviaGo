@@ -1,0 +1,17 @@
+<button
+    class="default-button"
+    id="timerToggleButton"
+    [disabled]="!this.matchQuestionManagementService.timerControlsEnabled"
+    (click)="toggleTimerState()"
+>
+    {{ timerToggleButtonIcon }} {{ timerToggleButtonText }}
+</button>
+<button
+    class="default-button"
+    id="activatePanicModeButton"
+    [disabled]="!isPanicModeAvailable || !this.matchQuestionManagementService.timerControlsEnabled"
+    (click)="panic()"
+>
+    <img class="small-icon" src="./assets/munch.webp" alt="scream" width="20" height="20" />
+    Panique!
+</button>

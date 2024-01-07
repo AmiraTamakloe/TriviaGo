@@ -1,0 +1,14 @@
+<div class="page">
+    <app-header [isAdmin]="true"></app-header>
+    <div class="container">
+        <div class="list">Liste des jeux</div>
+        <div class="title">
+            <div class="name">Nom du jeu</div>
+            <div class="date">Dernières modifications</div>
+            <div class="visibility">Visibilité</div>
+        </div>
+        <div class="games">
+            <app-game-list [isAdmin]="true"></app-game-list>
+        </div>
+    </div>
+</div>

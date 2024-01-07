@@ -1,0 +1,16 @@
+<div class="container" *ngIf="selectedGameMode === 'solo'">
+    <section class="play-area-container">
+        <app-play-area class="play-area" tabindex="0"></app-play-area>
+    </section>
+    <div class="chat">
+        <app-chat-box></app-chat-box>
+    </div>
+</div>
+<div class="container" *ngIf="selectedGameMode === 'multi'">
+    <section class="play-area-container">
+        <app-play-area-multiplayer class="play-area" tabindex="0"></app-play-area-multiplayer>
+    </section>
+    <div class="chat">
+        <app-chat-box></app-chat-box>
+    </div>
+</div>

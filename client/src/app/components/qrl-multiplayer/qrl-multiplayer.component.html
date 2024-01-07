@@ -1,0 +1,6 @@
+<div *ngIf="this.matchManagementService.organizer">
+    <app-qrl-host-histogram *ngIf="this.qrlCommonService.state === qrlState.Play"></app-qrl-host-histogram>
+    <app-qrl-host-validation *ngIf="this.qrlCommonService.state === qrlState.Validate"></app-qrl-host-validation>
+    <app-qrl-results *ngIf="this.qrlCommonService.state === qrlState.ViewResults"></app-qrl-results>
+</div>
+<app-qrl-player *ngIf="!this.matchManagementService.organizer"></app-qrl-player>

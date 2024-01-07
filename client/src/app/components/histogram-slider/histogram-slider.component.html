@@ -1,0 +1,6 @@
+<h3>{{ questions[currentIndex] }}</h3>
+<div class="slider-container">
+    <button (click)="previousSlide()">◀</button>
+    <app-static-histogram [list]="slides[currentIndex].bars"></app-static-histogram>
+    <button (click)="nextSlide()">▶</button>
+</div>

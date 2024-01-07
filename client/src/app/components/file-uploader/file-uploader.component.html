@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="title">Télécharger le jeu</h2>
+    <input type="file" class="file-input" (change)="onChange($event)" #fileUpload accept=".json" />
+
+    <div *ngIf="file">
+        <section class="file-info">
+            Détails du fichier:
+            <ul>
+                <li>Nom: {{ file.name }}</li>
+                <li>Type: {{ file.type }}</li>
+                <li>Taille: {{ file.size }} octets</li>
+            </ul>
+        </section>
+        <button (click)="onUpload()">Télécharger le fichier</button>
+        <section [ngSwitch]="status">
+            <p *ngSwitchCase="'uploading'">⏳ Téléchargement...</p>
+            <p *ngSwitchCase="'success'">✅ Téléchargement réussi!</p>
+            <p *ngSwitchCase="'fail'">
+                ❌ Erreur de téléchargement!
+                <li class="error" *ngFor="let err of error">{{ err }}</li>
+            </p>
+            <p *ngSwitchDefault>En attente de téléchargement...</p>
+        </section>
+    </div>
+</div>
